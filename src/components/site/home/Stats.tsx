@@ -26,7 +26,7 @@ export default function Stats({ stats }: { stats: { label: string; value: number
       <div className="grid grid-cols-2 border-y border-paper/10 lg:grid-cols-4">
         {stats.map((s, i) => (
           <div key={s.label} className={`px-2 py-10 md:px-8 ${i % 2 ? "border-l border-paper/10" : ""} ${i > 1 ? "border-t border-paper/10 lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}>
-            <p className="display text-[clamp(44px,6vw,88px)] leading-none"><Counter to={s.value} suffix={s.suffix} /></p>
+            <p className="display display-xl text-[clamp(44px,6vw,88px)] leading-none"><Counter to={s.value} suffix={s.suffix} /></p>
             <p className="mt-3 text-sm text-mist">{s.label}</p>
           </div>
         ))}

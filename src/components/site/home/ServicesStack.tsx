@@ -23,7 +23,7 @@ function StackCard({ s, i, n, progress, currency }: { s: Service; i: number; n: 
         <div className="relative order-2 flex flex-col p-7 md:order-1 md:p-12">
           <div className="flex items-center gap-3 text-accent">
             <span className="grid h-11 w-11 place-items-center rounded-full border border-accent/30"><ServiceIcon name={s.icon} /></span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-mist">{String(i + 1).padStart(2, "0")} — {s.duration}</span>
+            <span className="font-medium text-[11px] text-mist">{String(i + 1).padStart(2, "0")} — {s.duration}</span>
           </div>
           <h3 className="display mt-8 text-[clamp(36px,4.6vw,64px)]">{s.title}</h3>
           <p className="font-deva mt-1 text-xl text-paper/35">{s.hindi}</p>
@@ -54,7 +54,7 @@ export default function ServicesStack({ services, currency }: { services: Servic
       <div className="container-x flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="eyebrow mb-4">Consultations</p>
-          <h2 className="display text-[clamp(44px,7vw,104px)]">Guidance for <em className="text-gold">every</em> season.</h2>
+          <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">Guidance for <em className="text-gold">every</em> season.</h2>
         </div>
         <Link href="/services" className="btn btn-ghost self-start md:self-auto">All services <ArrowUpRight size={16} /></Link>
       </div>

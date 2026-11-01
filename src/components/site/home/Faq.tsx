@@ -11,7 +11,7 @@ export default function Faq({ faqs }: { faqs: F[] }) {
     <section className="container-x grid gap-12 py-24 md:py-36 lg:grid-cols-[1fr_1.4fr]">
       <Reveal>
         <p className="eyebrow mb-4">Questions</p>
-        <h2 className="display text-[clamp(44px,6vw,88px)]">Asked & <em className="text-gold">answered.</em></h2>
+        <h2 className="display display-xl text-[clamp(44px,6vw,88px)]">Asked & <em className="text-gold">answered.</em></h2>
         <p className="mt-5 max-w-sm text-paper/60">Still curious? Our team replies on WhatsApp within the hour.</p>
       </Reveal>
       <div className="border-t border-paper/10">

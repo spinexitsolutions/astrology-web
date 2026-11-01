@@ -10,7 +10,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
   ];
   const socials = Object.entries(settings.socials).filter(([, v]) => v);
   return (
-    <footer className="relative overflow-hidden border-t border-paper/10 bg-ink pt-20">
+    <footer className="night relative overflow-hidden pt-20">
       <div className="container-x grid gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <p className="display text-4xl">{settings.brandName}<span className="text-accent">{settings.logoGlyph}</span></p>

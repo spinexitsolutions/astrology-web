@@ -168,7 +168,7 @@ export function SettingsEditor({ initial }: { initial: SiteSettings }) {
                       <Input value={s[k]} onChange={(e) => up(k, e.target.value)} className="font-mono" />
                     </div>
                     <div className="mt-3 flex gap-2">
-                      {(k === "accent" ? ["#E8B86D", "#F2A65A", "#E07A5F", "#D4AF37", "#9ED8DB"] : ["#A89BFF", "#7DD3FC", "#F0ABFC", "#86EFAC", "#FCA5A5"]).map((c) => (
+                      {(k === "accent" ? ["#FF5A1F", "#FF2D7A", "#F59E0B", "#FF5A1F", "#14B8A6"] : ["#6E56FF", "#3B82F6", "#A855F7", "#10B981", "#F472B6"]).map((c) => (
                         <button key={c} onClick={() => up(k, c)} className={cn("size-8 rounded-full ring-2 ring-offset-2", s[k].toLowerCase() === c.toLowerCase() ? "ring-neutral-900" : "ring-transparent")} style={{ background: c }} aria-label={c} />
                       ))}
                     </div>
@@ -178,7 +178,7 @@ export function SettingsEditor({ initial }: { initial: SiteSettings }) {
               <div className="mt-6 overflow-hidden rounded-2xl bg-[#07070C] p-6 text-[#F3EEE5]">
                 <div className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: s.accent }}>Live preview</div>
                 <div className="mt-2 font-display text-4xl leading-none">
-                  Your stars, <em style={{ backgroundImage: `linear-gradient(100deg, #fff3d6, ${s.accent}, ${s.accentSecondary})`, WebkitBackgroundClip: "text", color: "transparent" }}>finally</em>
+                  Your stars, <em style={{ backgroundImage: `linear-gradient(95deg, ${s.accent}, #ff2d7a, ${s.accentSecondary})`, WebkitBackgroundClip: "text", color: "transparent" }}>finally</em>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <span className="rounded-full px-5 py-2.5 text-sm font-medium text-[#07070C]" style={{ background: s.accent }}>Book a reading</span>
@@ -355,10 +355,10 @@ export function SettingsEditor({ initial }: { initial: SiteSettings }) {
         {dirty && (
           <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} transition={{ type: "spring", stiffness: 400, damping: 34 }} className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4 lg:pl-[264px]">
             <div className="flex w-full max-w-lg items-center gap-3 rounded-full bg-neutral-900 py-2 pl-5 pr-2 text-white shadow-2xl">
-              <span className="size-2 animate-pulse rounded-full bg-[#E8B86D]" />
+              <span className="size-2 animate-pulse rounded-full bg-[#FF5A1F]" />
               <span className="flex-1 text-sm">Unsaved changes</span>
               <button onClick={() => setS(saved)} className="rounded-full px-4 py-2 text-sm text-white/70 hover:text-white">Discard</button>
-              <button onClick={save} disabled={saving} className="flex items-center gap-2 rounded-full bg-[#E8B86D] px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-[#f0c886] disabled:opacity-60">
+              <button onClick={save} disabled={saving} className="flex items-center gap-2 rounded-full bg-[#FF5A1F] px-5 py-2 text-sm font-medium text-white hover:bg-[#ff7a45] disabled:opacity-60">
                 <Save className="size-4" /> {saving ? "Saving…" : "Publish"}
               </button>
             </div>

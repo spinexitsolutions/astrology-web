@@ -79,8 +79,8 @@ export default function PanchangView() {
               {chog.map((c, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }} className={cn("rounded-2xl border p-3", c.nature === "good" ? "border-emerald-400/25 bg-emerald-400/[0.06]" : c.nature === "bad" ? "border-red-400/20 bg-red-400/[0.04]" : "border-paper/10")}>
                   <p className="display text-xl">{c.name}</p>
-                  <p className="mt-1 font-mono text-[10px] text-mist">{c.from}</p>
-                  <p className="font-mono text-[10px] text-mist">{c.to}</p>
+                  <p className="mt-1 font-medium text-[10px] text-mist">{c.from}</p>
+                  <p className="font-medium text-[10px] text-mist">{c.to}</p>
                 </motion.div>
               ))}
             </div>

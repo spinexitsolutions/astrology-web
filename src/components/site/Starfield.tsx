@@ -12,6 +12,7 @@ export default function Starfield({ density = 0.00018, className = "" }: { densi
     let stars: { x: number; y: number; r: number; p: number; s: number; z: number }[] = [];
     const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
     let shoot: { x: number; y: number; vx: number; vy: number; life: number } | null = null;
+    const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#ff5a1f";
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const resize = () => {
@@ -45,12 +46,13 @@ export default function Starfield({ density = 0.00018, className = "" }: { densi
       mouse.x += (mouse.tx - mouse.x) * 0.04;
       mouse.y += (mouse.ty - mouse.y) * 0.04;
       ctx.clearRect(0, 0, w, h);
+      const col = getComputedStyle(c).color;
       for (const s of stars) {
         const a = reduce ? 0.7 : 0.35 + 0.65 * Math.abs(Math.sin(t * 0.001 * s.s + s.p));
         const px = s.x - mouse.x * 14 * s.z;
         const py = s.y - mouse.y * 14 * s.z;
         ctx.globalAlpha = a;
-        ctx.fillStyle = s.z > 0.92 ? "#ffe6b8" : "#f3eee5";
+        ctx.fillStyle = s.z > 0.94 ? accent : col;
         ctx.beginPath();
         ctx.arc(px, py, s.r, 0, Math.PI * 2);
         ctx.fill();
@@ -61,8 +63,8 @@ export default function Starfield({ density = 0.00018, className = "" }: { densi
         }
         if (shoot) {
           const g = ctx.createLinearGradient(shoot.x, shoot.y, shoot.x - shoot.vx * 14, shoot.y - shoot.vy * 14);
-          g.addColorStop(0, `rgba(255,240,210,${shoot.life})`);
-          g.addColorStop(1, "rgba(255,240,210,0)");
+          g.addColorStop(0, `rgba(255,200,170,${shoot.life})`);
+          g.addColorStop(1, "rgba(255,200,170,0)");
           ctx.globalAlpha = 1;
           ctx.strokeStyle = g;
           ctx.lineWidth = 1.4;
@@ -91,5 +93,5 @@ export default function Starfield({ density = 0.00018, className = "" }: { densi
     };
   }, [density]);
 
-  return <canvas ref={ref} aria-hidden className={`pointer-events-none absolute inset-0 h-full w-full ${className}`} />;
+  return <canvas ref={ref} aria-hidden className={`pointer-events-none absolute inset-0 h-full w-full text-paper ${className}`} />;
 }

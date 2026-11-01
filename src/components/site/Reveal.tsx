@@ -29,7 +29,7 @@ export function SplitText({ text, className = "", delay = 0, italicWords = [] as
       {words.map((w, i) => (
         <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-bottom" aria-hidden>
           <motion.span
-            className={`inline-block ${italicWords.includes(w.replace(/[^\w]/g, "")) ? "italic text-gold" : ""}`}
+            className={`inline-block ${italicWords.some((x) => x.replace(/[^\w]/g, "") === w.replace(/[^\w]/g, "")) ? "text-gold" : ""}`}
             initial={{ y: "110%", rotate: 4 }}
             animate={inView ? { y: "0%", rotate: 0 } : {}}
             transition={{ duration: 1.1, ease: EASE, delay: delay + i * 0.06 }}

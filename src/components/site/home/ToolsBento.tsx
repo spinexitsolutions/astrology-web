@@ -22,7 +22,7 @@ function Spot({ href, className, children, title, desc, tag }: { href: string; c
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(420px circle at var(--mx) var(--my), color-mix(in oklab, var(--accent) 16%, transparent), transparent 60%)" }} />
       <div className="relative flex items-center justify-between">
-        <span className="rounded-full border border-paper/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-mist">{tag}</span>
+        <span className="rounded-full border border-paper/15 px-3 py-1 font-medium text-[10px] text-mist">{tag}</span>
         <span className="grid h-10 w-10 place-items-center rounded-full border border-paper/15 transition duration-500 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-ink">
           <ArrowUpRight size={18} />
         </span>
@@ -46,7 +46,7 @@ function MiniChart() {
         <motion.path key={d} d={d} fill="none" stroke="rgba(243,238,229,.45)" strokeWidth="0.8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.4, delay: 0.3 + i * 0.25 }} />
       ))}
       {planets.map(([t, x, y], i) => (
-        <motion.text key={t as string} x={x as number} y={y as number} textAnchor="middle" fontSize="11" fill={i === 0 ? "var(--accent)" : "#f3eee5"} fontFamily="var(--font-geist-mono)" initial={{ opacity: 0, y: (y as number) + 6 }} whileInView={{ opacity: 1, y: y as number }} viewport={{ once: true }} transition={{ delay: 1.2 + i * 0.12 }}>
+        <motion.text key={t as string} x={x as number} y={y as number} textAnchor="middle" fontSize="11" fill={i === 0 ? "var(--accent)" : "#f3eee5"} fontFamily="var(--font-sans)" initial={{ opacity: 0, y: (y as number) + 6 }} whileInView={{ opacity: 1, y: y as number }} viewport={{ once: true }} transition={{ delay: 1.2 + i * 0.12 }}>
           {t}
         </motion.text>
       ))}
@@ -64,7 +64,7 @@ function ScoreRing({ score = 28 }: { score?: number }) {
       </svg>
       <div className="absolute text-center">
         <p className="display text-5xl">{score}<span className="text-xl text-paper/40">/36</span></p>
-        <p className="font-mono text-[10px] uppercase tracking-widest text-mist">Gunas</p>
+        <p className="font-medium text-[10px] text-mist">Gunas</p>
       </div>
     </div>
   );
@@ -91,7 +91,7 @@ export default function ToolsBento() {
     <section className="container-x py-24 md:py-36">
       <Reveal className="mb-12 max-w-3xl">
         <p className="eyebrow mb-4">Free tools · Computed live</p>
-        <h2 className="display text-[clamp(44px,7vw,104px)]">The sky, <em className="text-gold">on demand.</em></h2>
+        <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">The sky, <em className="text-gold">on demand.</em></h2>
         <p className="mt-5 max-w-xl text-paper/60">Real astronomical calculations — Lahiri ayanamsa, true planetary positions — running right in your browser. No sign-up. No paywall.</p>
       </Reveal>
       <div className="grid gap-4 md:grid-cols-6 lg:grid-cols-12">

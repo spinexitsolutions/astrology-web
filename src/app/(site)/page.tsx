@@ -18,6 +18,9 @@ import type { HomeSectionKey } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
+// Sections rendered in the dark "night" palette — creates a day/night rhythm down the page
+const NIGHT: HomeSectionKey[] = ["marquee", "zodiac", "tools", "cta"];
+
 export default function Home() {
   const db = getDB();
   const s = db.settings;
@@ -48,7 +51,7 @@ export default function Home() {
     <>
       <Hero hero={s.hero} />
       {s.homeSections.filter((x) => x.enabled).map((x) => (
-        <div key={x.key}>{render[x.key]}</div>
+        <div key={x.key} className={NIGHT.includes(x.key) ? "night" : undefined}>{render[x.key]}</div>
       ))}
     </>
   );

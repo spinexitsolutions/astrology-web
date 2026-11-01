@@ -31,7 +31,7 @@ export default function ChartSVG({ lagna, planets, title }: { lagna: number; pla
       </g>
       <path d="M200 0 L300 100 L200 200 L100 100 Z" fill="color-mix(in oklab, var(--accent) 10%, transparent)" />
       {NUM.map(([x, y], i) => (
-        <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fill="rgba(243,238,229,.4)" fontFamily="var(--font-geist-mono)">
+        <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="11" fill="rgba(243,238,229,.4)" fontFamily="var(--font-sans)">
           {((lagna + i) % 12) + 1}
         </text>
       ))}
@@ -39,13 +39,13 @@ export default function ChartSVG({ lagna, planets, title }: { lagna: number; pla
         const [cx, cy] = CENTER[h - 1];
         const start = cy - ((ps.length - 1) * 15) / 2;
         return ps.map((p, k) => (
-          <text key={p.name} x={cx} y={start + k * 15} textAnchor="middle" dominantBaseline="central" fontSize="13" fill={p.name === "Moon" ? "var(--accent)" : "#f3eee5"} fontFamily="var(--font-geist)">
+          <text key={p.name} x={cx} y={start + k * 15} textAnchor="middle" dominantBaseline="central" fontSize="13" fill={p.name === "Moon" ? "var(--accent)" : "#f3eee5"} fontFamily="var(--font-sans)">
             {p.short}
             <tspan fontSize="9" fill="rgba(243,238,229,.5)">{Math.floor(p.degree)}°{p.retro && p.name !== "Rahu" && p.name !== "Ketu" ? "ᴿ" : ""}</tspan>
           </text>
         ));
       })}
-      <text x="200" y="128" textAnchor="middle" fontSize="10" fill="var(--accent)" fontFamily="var(--font-geist-mono)" letterSpacing="2">ASC</text>
+      <text x="200" y="128" textAnchor="middle" fontSize="10" fill="var(--accent)" fontFamily="var(--font-sans)" letterSpacing="2">ASC</text>
     </svg>
   );
 }

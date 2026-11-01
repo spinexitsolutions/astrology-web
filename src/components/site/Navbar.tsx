@@ -26,7 +26,7 @@ function Logo({ glyph, brand, progress }: { glyph: string; brand: string; progre
           <span className="absolute -top-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-paper" />
         </span>
       </span>
-      <span className="font-display text-[22px] leading-none tracking-tight">{brand}</span>
+      <span className="display text-[21px] leading-none">{brand}</span>
     </Link>
   );
 }
@@ -55,7 +55,7 @@ function FullMenu({ items, settings, onClose }: { items: NavItem[]; settings: Si
 
   return (
     <motion.div
-      className="fixed inset-0 z-[90] overflow-hidden bg-ink"
+      className="night fixed inset-0 z-[90] overflow-hidden bg-ink"
       initial={{ clipPath: "inset(0 0 100% 0 round 0 0 40px 40px)" }}
       animate={{ clipPath: "inset(0 0 0% 0 round 0 0 0px 0px)" }}
       exit={{ clipPath: "inset(0 0 100% 0 round 0 0 40px 40px)" }}
@@ -85,11 +85,11 @@ function FullMenu({ items, settings, onClose }: { items: NavItem[]; settings: Si
                       onMouseEnter={() => setHover(i)}
                       className="group flex items-baseline gap-4 py-3.5 md:py-4"
                     >
-                      <span className="w-7 font-mono text-[11px] text-mist">{String(i + 1).padStart(2, "0")}</span>
-                      <span className={cn("display text-[clamp(34px,6.5vw,64px)] transition-all duration-500 group-hover:translate-x-3 group-hover:italic", active ? "text-accent" : "text-paper")}>
+                      <span className="w-7 font-medium text-[11px] text-mist">{String(i + 1).padStart(2, "0")}</span>
+                      <span className={cn("display text-[clamp(34px,6.5vw,64px)] transition-all duration-500 group-hover:translate-x-3", active ? "text-accent" : "text-paper")}>
                         {it.label}
                       </span>
-                      <span className="ml-auto hidden translate-x-2 text-right font-mono text-[10px] uppercase tracking-[0.2em] text-mist opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
+                      <span className="ml-auto hidden translate-x-2 text-right font-medium text-[10px] text-mist opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 sm:block">
                         {it.hint}
                       </span>
                     </Link>
@@ -161,7 +161,7 @@ export default function Navbar({ settings }: { settings: SiteSettings }) {
   return (
     <>
       <motion.header
-        className="pointer-events-none fixed inset-x-0 top-0 z-[100] flex justify-center px-3 pt-3 md:pt-4"
+        className="night pointer-events-none fixed inset-x-0 top-0 z-[100] flex justify-center !bg-transparent px-3 pt-3 md:pt-4"
         animate={{ y: hidden ? -110 : !scrolled && settings.announcement.enabled ? 36 : 0 }}
         transition={{ duration: 0.6, ease: EASE }}
       >
@@ -189,7 +189,7 @@ export default function Navbar({ settings }: { settings: SiteSettings }) {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -10, filter: "blur(6px)" }}
                   transition={{ duration: 0.45, ease: EASE }}
-                  className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-mist"
+                  className="flex items-center gap-2 font-medium text-[11px] text-mist"
                 >
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
                   {current}

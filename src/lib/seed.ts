@@ -52,8 +52,8 @@ export const seed: DB = {
     brandName: "Taarak",
     brandTagline: "Vedic astrology, beautifully decoded.",
     logoGlyph: "✦",
-    accent: "#E8B86D",
-    accentSecondary: "#A89BFF",
+    accent: "#FF5A1F",
+    accentSecondary: "#6E56FF",
     announcement: { enabled: true, text: "Kartik Purnima special — 20% off every Kundli report this week", href: "/shop" },
     contact: {
       phone: "+91 98765 43210",

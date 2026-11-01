@@ -48,7 +48,7 @@ export default function HoroscopeTabs({ readings }: { readings: Record<Period, R
                   <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-paper/10">
                     <motion.div className="h-full rounded-full bg-accent" initial={{ width: 0 }} animate={{ width: `${v * 20}%` }} transition={{ duration: 1.2, delay: 0.2 + i * 0.1, ease: [0.16, 1, 0.3, 1] }} />
                   </div>
-                  <span className="w-8 text-right font-mono text-xs text-mist">{v}/5</span>
+                  <span className="w-8 text-right font-medium text-xs text-mist">{v}/5</span>
                 </div>
               ))}
             </div>

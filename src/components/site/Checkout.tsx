@@ -38,7 +38,7 @@ export default function Checkout({ currency }: { currency: string }) {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-xl rounded-[32px] border border-accent/30 bg-ink-2 p-10">
         <div className="grid h-16 w-16 place-items-center rounded-full bg-accent text-ink"><Check size={30} /></div>
         <p className="display mt-6 text-5xl">Order placed.</p>
-        <p className="mt-3 text-paper/65">Order <span className="font-mono text-paper">#{orderId.slice(-6).toUpperCase()}</span> is confirmed. Your items will be energised on the next auspicious muhurat and shipped with tracking on WhatsApp.</p>
+        <p className="mt-3 text-paper/65">Order <span className="font-medium text-paper">#{orderId.slice(-6).toUpperCase()}</span> is confirmed. Your items will be energised on the next auspicious muhurat and shipped with tracking on WhatsApp.</p>
         <Link href="/shop" className="btn btn-ghost mt-8">Continue shopping</Link>
       </motion.div>
     );

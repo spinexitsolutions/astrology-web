@@ -49,7 +49,7 @@ export default function MatchingTool() {
                 </svg>
                 <div className="absolute">
                   <p className="display text-7xl">{res.total}</p>
-                  <p className="font-mono text-xs text-mist">OUT OF 36</p>
+                  <p className="font-medium text-xs text-mist">OUT OF 36</p>
                 </div>
               </div>
               <p className="display mt-6 text-2xl">{res.verdict}</p>
@@ -83,7 +83,7 @@ export default function MatchingTool() {
                       </div>
                       <p className="mt-1.5 text-xs text-paper/50">{k.boy} × {k.girl}</p>
                     </div>
-                    <p className="font-mono text-sm"><span className="text-paper">{k.score}</span><span className="text-mist">/{k.max}</span></p>
+                    <p className="font-medium text-sm"><span className="text-paper">{k.score}</span><span className="text-mist">/{k.max}</span></p>
                   </div>
                 ))}
               </div>

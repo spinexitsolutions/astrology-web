@@ -20,7 +20,7 @@ export function ProductCard({ p, currency }: { p: Product; currency: string }) {
           <ProductArt category={p.category} hue={p.hue} className="h-full w-full transition duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-110" />
         )}
         {off > 0 && <span className="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-[11px] font-semibold text-ink">−{off}%</span>}
-        <span className="absolute right-3 top-3 rounded-full bg-ink/60 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-paper/80 backdrop-blur">{p.planet}</span>
+        <span className="absolute right-3 top-3 rounded-full bg-ink/60 px-2.5 py-1 font-medium text-[10px] text-paper/80 backdrop-blur">{p.planet}</span>
       </Link>
       <button
         onClick={() => cart.add({ productId: p.id, name: p.name, price: p.price, hue: p.hue, category: p.category, image: p.image })}
@@ -31,7 +31,7 @@ export function ProductCard({ p, currency }: { p: Product; currency: string }) {
       </button>
       <div className="mt-4 flex items-start justify-between gap-3 px-1">
         <div className="min-w-0">
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-mist">{p.category}</p>
+          <p className="font-medium text-[10px] text-mist">{p.category}</p>
           <Link href={`/shop/${p.slug}`} className="mt-1 block truncate text-[16px] hover:text-accent">{p.name}</Link>
         </div>
         <div className="shrink-0 text-right">
@@ -49,7 +49,7 @@ export default function ShopPreview({ products, currency }: { products: Product[
       <Reveal className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="eyebrow mb-4">The remedy shop</p>
-          <h2 className="display text-[clamp(44px,7vw,104px)]">Energised <em className="text-gold">in Kashi.</em></h2>
+          <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">Energised <em className="text-gold">in Kashi.</em></h2>
         </div>
         <Link href="/shop" className="btn btn-ghost self-start md:self-auto">Shop all <ArrowUpRight size={16} /></Link>
       </Reveal>

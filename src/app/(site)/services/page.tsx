@@ -22,7 +22,7 @@ export default function ServicesPage() {
           {list.map((s, i) => (
             <Reveal key={s.id}>
               <Link href={`/services/${s.slug}`} className="group grid items-center gap-6 py-8 md:grid-cols-[80px_1.4fr_1fr_auto] md:py-10">
-                <span className="font-mono text-sm text-mist">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-medium text-sm text-mist">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h2 className="display text-[clamp(32px,4vw,56px)] transition duration-500 group-hover:translate-x-2 group-hover:italic group-hover:text-accent">{s.title}</h2>
                   <p className="font-deva mt-1 text-paper/35">{s.hindi}</p>

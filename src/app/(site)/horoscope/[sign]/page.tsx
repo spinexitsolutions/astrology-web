@@ -31,7 +31,7 @@ export default async function SignPage({ params }: { params: Promise<{ sign: str
         <div className="container-x relative grid items-end gap-10 md:grid-cols-[1fr_auto]">
           <div>
             <p className="eyebrow mb-5"><Link href="/horoscope" className="hover:text-paper">Horoscope</Link> / {s.name}</p>
-            <h1 className="display text-[clamp(64px,12vw,190px)] leading-[0.85]">{s.name}</h1>
+            <h1 className="display display-xl text-[clamp(64px,12vw,190px)] leading-[0.85]">{s.name}</h1>
             <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-paper/60">
               <span className="font-deva text-2xl text-paper/80">{s.hindi}</span>
               <span>{s.vedic} Rashi</span>·<span>{s.dates}</span>·<span>{s.element} · {s.modality}</span>

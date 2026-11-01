@@ -29,7 +29,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <p className="eyebrow"><Link href="/blog" className="hover:text-paper">Journal</Link> / {p.category}</p>
         <h1 className="display mt-5 max-w-5xl text-[clamp(44px,7vw,108px)]">{p.title}</h1>
         <p className="mt-6 max-w-2xl text-lg text-paper/60">{p.excerpt}</p>
-        <p className="mt-8 font-mono text-xs uppercase tracking-[0.18em] text-mist">{p.author} · {shortDate(p.date)} · {p.readMinutes} min read</p>
+        <p className="mt-8 font-medium text-xs text-mist">{p.author} · {shortDate(p.date)} · {p.readMinutes} min read</p>
       </header>
       <Parallax className="container-x !px-0 md:!px-10" speed={0.1}>
         <div className="relative aspect-[16/9] overflow-hidden md:rounded-[32px]">

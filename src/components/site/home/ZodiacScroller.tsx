@@ -13,8 +13,8 @@ function Card({ s, i }: { s: Sign; i: number }) {
       style={{ background: `radial-gradient(120% 80% at 80% 0%, hsl(${s.hue} 70% 55% / .28), transparent 60%), linear-gradient(180deg, #11111a, #0a0a10)` }}
     >
       <div className="flex items-start justify-between">
-        <span className="font-mono text-[11px] text-mist">{String(i + 1).padStart(2, "0")} / 12</span>
-        <span className="rounded-full border border-paper/15 px-3 py-1 text-[11px] uppercase tracking-widest text-paper/70">{s.element}</span>
+        <span className="font-medium text-[11px] text-mist">{String(i + 1).padStart(2, "0")} / 12</span>
+        <span className="rounded-full border border-paper/15 px-3 py-1 text-[12px] font-medium text-paper/70">{s.element}</span>
       </div>
       <div className="relative my-auto grid place-items-center">
         <span
@@ -65,7 +65,7 @@ export default function ZodiacScroller() {
     <div className="container-x mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
       <div>
         <p className="eyebrow mb-4">The twelve rashis</p>
-        <h2 className="display text-[clamp(44px,7vw,104px)]">Find your <em className="text-gold">sign.</em></h2>
+        <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">Find your <em className="text-gold">sign.</em></h2>
       </div>
       <p className="max-w-sm text-paper/60">Each sign is a doorway — tap yours for today&apos;s horoscope, lucky colour, and who you click with.</p>
     </div>

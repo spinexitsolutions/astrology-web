@@ -12,7 +12,7 @@ export function PostCard({ p, big = false }: { p: Post; big?: boolean }) {
         <Image src={p.image} alt={p.title} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover transition duration-[1.4s] ease-[var(--ease-out-expo)] group-hover:scale-105" />
         <span className="absolute left-4 top-4 rounded-full bg-ink/60 px-3 py-1 text-xs backdrop-blur">{p.category}</span>
       </div>
-      <div className="mt-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-mist">
+      <div className="mt-5 flex items-center gap-3 font-medium text-[11px] text-mist">
         <span>{shortDate(p.date)}</span> · <span>{p.readMinutes} min read</span>
       </div>
       <h3 className={`display mt-2 transition group-hover:text-accent ${big ? "text-[clamp(32px,3.6vw,52px)]" : "text-3xl"}`}>{p.title}</h3>
@@ -29,7 +29,7 @@ export default function BlogPreview({ posts }: { posts: Post[] }) {
       <Reveal className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="eyebrow mb-4">The journal</p>
-          <h2 className="display text-[clamp(44px,7vw,104px)]">Stories <em className="text-gold">from the sky.</em></h2>
+          <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">Stories <em className="text-gold">from the sky.</em></h2>
         </div>
         <Link href="/blog" className="group inline-flex items-center gap-2 text-paper/70 hover:text-paper">All articles <ArrowUpRight size={16} className="transition group-hover:rotate-45" /></Link>
       </Reveal>
@@ -43,7 +43,7 @@ export default function BlogPreview({ posts }: { posts: Post[] }) {
                   <Image src={p.image} alt={p.title} fill sizes="400px" className="object-cover transition duration-[1.4s] group-hover:scale-105" />
                 </div>
                 <div className="sm:mt-4 lg:mt-0">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-mist">{p.category} · {p.readMinutes} min</p>
+                  <p className="font-medium text-[11px] text-mist">{p.category} · {p.readMinutes} min</p>
                   <h3 className="display mt-2 text-3xl transition group-hover:text-accent">{p.title}</h3>
                   <p className="mt-2 line-clamp-2 text-paper/60">{p.excerpt}</p>
                 </div>

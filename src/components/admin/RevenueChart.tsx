@@ -20,7 +20,7 @@ export function RevenueChart({ data, currency }: { data: Pt[]; currency: string 
       <svg viewBox={`0 0 ${W} ${H}`} className="h-[220px] w-full sm:h-[260px]" preserveAspectRatio="none" onMouseLeave={() => setHover(null)}>
         <defs>
           <linearGradient id="rg" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#E8B86D" />
+            <stop offset="0" stopColor="#FF5A1F" />
             <stop offset="1" stopColor="#C9963F" stopOpacity="0.55" />
           </linearGradient>
         </defs>

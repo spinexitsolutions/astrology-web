@@ -48,7 +48,7 @@ function Nav({ brand, glyph, onNavigate }: { brand: string; glyph: string; onNav
   return (
     <div className="flex h-full flex-col">
       <Link href="/admin" onClick={onNavigate} className="flex items-center gap-3 px-5 pb-6 pt-6">
-        <span className="grid size-10 place-items-center rounded-2xl bg-neutral-900 text-lg text-[#E8B86D] shadow-[0_8px_20px_-8px_rgba(0,0,0,0.5)]">{glyph}</span>
+        <span className="grid size-10 place-items-center rounded-2xl bg-neutral-900 text-lg text-[#FF5A1F] shadow-[0_8px_20px_-8px_rgba(0,0,0,0.5)]">{glyph}</span>
         <span>
           <span className="block font-display text-2xl leading-none tracking-tight">{brand}</span>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">Studio</span>
@@ -100,7 +100,7 @@ export function AdminShell({ children, brand, glyph }: { children: React.ReactNo
         {/* mobile top bar */}
         <header className="sticky top-0 z-30 flex items-center justify-between border-b border-black/[0.06] bg-[#F5F5F7]/80 px-4 py-3 backdrop-blur-xl lg:hidden">
           <Link href="/admin" className="flex items-center gap-2.5">
-            <span className="grid size-8 place-items-center rounded-xl bg-neutral-900 text-[#E8B86D]">{glyph}</span>
+            <span className="grid size-8 place-items-center rounded-xl bg-neutral-900 text-[#FF5A1F]">{glyph}</span>
             <span className="font-display text-xl">{brand} Studio</span>
           </Link>
           <button onClick={() => setOpen(true)} className="grid size-10 place-items-center rounded-full bg-white shadow-sm ring-1 ring-black/5" aria-label="Open menu">

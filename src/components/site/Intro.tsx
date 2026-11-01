@@ -13,7 +13,7 @@ function OrbitArt({ d }: { d: number }) {
     <svg viewBox="-260 -260 520 520" className="absolute left-1/2 top-1/2 h-[min(120vw,760px)] w-[min(120vw,760px)] -translate-x-1/2 -translate-y-1/2" aria-hidden>
       <defs>
         <radialGradient id="intro-sun">
-          <stop offset="0%" stopColor="#fff6dc" />
+          <stop offset="0%" stopColor="#ffd2b8" />
           <stop offset="45%" stopColor="var(--accent)" />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </radialGradient>
@@ -24,7 +24,7 @@ function OrbitArt({ d }: { d: number }) {
           <motion.circle
             r={r}
             fill="none"
-            stroke="rgba(243,238,229,.28)"
+            stroke="rgba(245,240,232,.22)"
             strokeWidth="0.7"
             strokeDasharray={i % 2 ? "2 5" : undefined}
             initial={{ pathLength: 0, rotate: -90, opacity: 0 }}
@@ -36,7 +36,7 @@ function OrbitArt({ d }: { d: number }) {
             animate={{ rotate: i * 70 + (i % 2 ? -1 : 1) * (360 / (i + 1.4)) * (d / 3000), opacity: 1 }}
             transition={{ rotate: { duration: d / 1000, ease: "linear" }, opacity: { delay: 0.5 + i * 0.15, duration: 0.6 } }}
           >
-            <circle cx={r} cy="0" r={[4, 6, 3.5, 5][i]} fill={i === 1 ? "var(--accent)" : i === 3 ? "var(--accent-2)" : "#f3eee5"} />
+            <circle cx={r} cy="0" r={[4, 6, 3.5, 5][i]} fill={i === 1 ? "var(--accent)" : i === 3 ? "var(--accent-2)" : "#f5f0e8"} />
             {i === 2 && <circle cx={r} cy="0" r="10" fill="none" stroke="rgba(243,238,229,.4)" strokeWidth="0.6" />}
           </motion.g>
         </g>
@@ -123,7 +123,7 @@ export default function Intro({ settings, brand }: { settings: IntroSettings; br
       {show && (
         <motion.div
           key="intro"
-          className="intro-overlay fixed inset-0 z-[200] flex items-center justify-center overflow-hidden bg-ink"
+          className="night intro-overlay fixed inset-0 z-[200] flex items-center justify-center overflow-hidden bg-ink"
           initial={{ clipPath: "circle(150% at 50% 50%)" }}
           exit={{ clipPath: "circle(0% at 50% 50%)" }}
           transition={{ duration: 1.1, ease: EASE }}
@@ -132,7 +132,7 @@ export default function Intro({ settings, brand }: { settings: IntroSettings; br
           {!minimal && (settings.style === "mandala" ? <MandalaArt /> : <OrbitArt d={d} />)}
 
           <div className="relative z-10 px-6 text-center">
-            <h1 className="display text-[clamp(64px,16vw,200px)] leading-none">
+            <h1 className="display display-xl text-[clamp(64px,16vw,200px)] leading-none">
               {title.split("").map((ch, i) => (
                 <motion.span
                   key={i}
@@ -146,7 +146,7 @@ export default function Intro({ settings, brand }: { settings: IntroSettings; br
               ))}
             </h1>
             <motion.p
-              className="mt-4 font-display text-xl italic text-paper/70 md:text-2xl"
+              className="mt-4 text-lg text-paper/60 md:text-xl"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.1 }}
@@ -162,14 +162,14 @@ export default function Intro({ settings, brand }: { settings: IntroSettings; br
                 <div className="h-full bg-accent transition-[width] duration-100" style={{ width: `${count}%` }} />
               </div>
             </div>
-            <div className="font-mono text-5xl tabular-nums text-paper/90 md:text-7xl">
+            <div className="display text-6xl tabular-nums text-paper md:text-8xl">
               {String(count).padStart(3, "0")}
             </div>
           </div>
-          <div className="absolute left-5 top-5 font-mono text-[10px] uppercase tracking-[0.25em] text-mist md:left-10 md:top-8">
+          <div className="absolute left-5 top-5 font-medium text-[10px] text-mist md:left-10 md:top-8">
             25.3176° N · 82.9739° E
           </div>
-          <div className="absolute right-5 top-5 font-mono text-[10px] uppercase tracking-[0.25em] text-mist md:right-10 md:top-8">
+          <div className="absolute right-5 top-5 font-medium text-[10px] text-mist md:right-10 md:top-8">
             Kashi · {new Date().getFullYear()}
           </div>
         </motion.div>

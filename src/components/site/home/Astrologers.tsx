@@ -40,7 +40,7 @@ export default function Astrologers({ list, currency }: { list: Astrologer[]; cu
       <Reveal className="container-x mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="eyebrow mb-4">Our astrologers</p>
-          <h2 className="display text-[clamp(44px,7vw,104px)]">Wise. Warm. <em className="text-gold">Verified.</em></h2>
+          <h2 className="display display-xl text-[clamp(44px,7vw,104px)]">Wise. Warm. <em className="text-gold">Verified.</em></h2>
         </div>
         <Link href="/astrologers" className="group inline-flex items-center gap-2 text-paper/70 hover:text-paper">
           Meet all astrologers <ArrowUpRight size={16} className="transition group-hover:rotate-45" />

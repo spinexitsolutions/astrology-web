@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Download, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { birthChart, DASHA_ORDER, NAKSHATRAS, RASHI_EN, RASHIS, toUTC, type Chart } from "@/lib/astro";
 import { cn } from "@/lib/utils";
 import BirthFields, { emptyBirth, type BirthInput } from "./BirthForm";
@@ -23,6 +23,12 @@ export default function KundliTool() {
   const [chart, setChart] = useState<Chart | null>(null);
   const [view, setView] = useState<"lagna" | "moon">("lagna");
   const [loading, setLoading] = useState(false);
+
+  // Prefill from the hero's "Map my sky" field (/kundli?date=YYYY-MM-DD)
+  useEffect(() => {
+    const d = new URLSearchParams(window.location.search).get("date");
+    if (d && /^\d{4}-\d{2}-\d{2}$/.test(d)) setInput((x) => ({ ...x, date: d }));
+  }, []);
 
   function generate(e: React.FormEvent) {
     e.preventDefault();
@@ -122,9 +128,9 @@ export default function KundliTool() {
                           <tr key={p.name} className="border-b border-paper/5 last:border-0">
                             <td className="px-5 py-3">{p.name}{p.retro && p.name !== "Rahu" && p.name !== "Ketu" && <span className="ml-1 text-xs text-accent">R</span>}</td>
                             <td className="py-3 text-paper/75">{RASHIS[p.rashi]}</td>
-                            <td className="py-3 font-mono text-xs text-paper/75">{fmtDeg(p.degree)}</td>
+                            <td className="py-3 font-medium text-xs text-paper/75">{fmtDeg(p.degree)}</td>
                             <td className="py-3 text-paper/75">{NAKSHATRAS[p.nakshatra]} <span className="text-mist">{p.pada}</span></td>
-                            <td className="py-3 pr-5 text-right font-mono text-paper/75">{p.house}</td>
+                            <td className="py-3 pr-5 text-right font-medium text-paper/75">{p.house}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -149,7 +155,7 @@ export default function KundliTool() {
                 <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-3">
                   {chart.dasha.map((d, i) => (
                     <p key={i} className={cn("flex justify-between border-b border-paper/5 py-1.5", d === chart.currentDasha ? "text-accent" : "text-paper/70")}>
-                      <span>{d.lord}</span><span className="font-mono text-xs">{yr(d.start)}–{yr(d.end)}</span>
+                      <span>{d.lord}</span><span className="font-medium text-xs">{yr(d.start)}–{yr(d.end)}</span>
                     </p>
                   ))}
                 </div>

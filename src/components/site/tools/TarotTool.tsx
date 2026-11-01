@@ -51,7 +51,7 @@ function CardFace({ idx, reversed }: Pick) {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-between rounded-[14px] border border-accent/60 bg-[linear-gradient(170deg,#f6f0e3,#e6dcc6)] p-3 text-ink [backface-visibility:hidden] [transform:rotateY(180deg)]">
       <div className={cn("flex h-full w-full flex-col items-center justify-between rounded-[9px] border border-ink/20 p-2", reversed && "rotate-180")}>
-        <span className="font-mono text-[10px] tracking-widest">{ROMAN[idx]}</span>
+        <span className="font-medium text-[10px]">{ROMAN[idx]}</span>
         <span className="text-5xl text-[#9a6b2a]">{c.s}</span>
         <span className="display text-center text-[15px] leading-tight">{c.n}</span>
       </div>

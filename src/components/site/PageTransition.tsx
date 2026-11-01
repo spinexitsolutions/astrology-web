@@ -14,7 +14,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[119] bg-ink"
+        className="pointer-events-none fixed inset-0 z-[119] bg-[#0d0b14]"
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         transition={{ duration: 0.9, ease: [0.83, 0, 0.17, 1], delay: 0.08 }}

@@ -21,7 +21,7 @@ export default function Testimonials({ list }: { list: Testimonial[] }) {
     <section className="grain relative overflow-hidden bg-paper text-ink" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="container-x relative py-24 md:py-36">
         <div className="flex items-center justify-between">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/50">Kind words · {String(i + 1).padStart(2, "0")}/{String(n).padStart(2, "0")}</p>
+          <p className="font-medium text-[11px] text-ink/50">Kind words · {String(i + 1).padStart(2, "0")}/{String(n).padStart(2, "0")}</p>
           <div className="flex gap-2">
             <button onClick={() => setI((i - 1 + n) % n)} className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 transition hover:bg-ink hover:text-paper" aria-label="Previous"><ArrowLeft size={18} /></button>
             <button onClick={() => setI((i + 1) % n)} className="grid h-11 w-11 place-items-center rounded-full border border-ink/15 transition hover:bg-ink hover:text-paper" aria-label="Next"><ArrowRight size={18} /></button>
